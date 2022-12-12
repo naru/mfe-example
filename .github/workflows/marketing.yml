@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "marketing/**"
+      - ".github/workflows/**"
 
 defaults:
   run:
