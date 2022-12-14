@@ -4,7 +4,7 @@ import {
   Route,
   BrowserRouter,
 } from "react-router-dom/cjs/react-router-dom";
-import { StylesProvider } from "@material-ui/core";
+import { StylesProvider, createGenerateClassName } from "@material-ui/core";
 
 import Landing from "./components/Landing";
 import Pricing from "./components/Pricing";
@@ -16,14 +16,14 @@ const generateClassName = createGenerateClassName({
 export default () => {
   return (
     <div>
-      <StylesProvider generateClassName={generateClassName}>
-        <BrowserRouter>
+      <BrowserRouter>
+        <StylesProvider generateClassName={generateClassName}>
           <Switch>
             <Route exact path="/pricing" component={Pricing} />
             <Route exact path="/" component={Landing} />
           </Switch>
-        </BrowserRouter>
-      </StylesProvider>
+        </StylesProvider>
+      </BrowserRouter>
     </div>
   );
 };
